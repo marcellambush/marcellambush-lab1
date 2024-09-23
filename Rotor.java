@@ -14,6 +14,10 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
+        String outer = this.rotorValues;
+        for (int i = 0; i < outer.length(); i++){
+            outer[i]
+        }
                
     }
     
