@@ -16,27 +16,28 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
-        int size = this.rotorValues.length();
+        int size = this.rotorValues.length(); //obtain size of the string 
+        //create new string by placing last element of old string to be the first element in the new string and then adding the rest of
+        //the old string shifting the elements over one
+        String newRotorValues = rotorValues.charAt(size - 1) + rotorValues.substring(0, size - 1); 
+        this.rotorValues = newRotorValues; //update rotorValues to be the new string
 
-        String newRotorValues = rotorValues.charAt(size) + rotorValues.substring(0, size - 1);
-        this.rotorValues = newRotorValues;
-
-        if (rotorValues.charAt(0) == startChar){
-            return true;
+        if (rotorValues.charAt(0) == startChar){ //if the first char is the starting character
+            return true; 
         }
-        return false;
+        return false; //if first char is not starting char
                
     }
     
 
     public int indexOf(char c){
         //TODO
-        for (int i = 0; i < rotorValues.length(); i++){
-            if (rotorValues.charAt(0) == c){
-                return i;
+        for (int i = 0; i < rotorValues.length(); i++){ //loop through rotor string
+            if (rotorValues.charAt(i) == c){ //if characters match 
+                return i; //return index
             }
         }
-        return 292943;
+        return 292943; //else return a random number that wont match an index
     }
 
     public char charAt(int idx){
